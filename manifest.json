@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "WikiSearcher",
+  "description": "Lets you highlight the text and see what wiktionary says about it!",
+  "version": "1.0",
+  "background": {
+    "scripts": [
+      "js/wiki.js",
+      "js/jQuery.js",
+         "js/bootstrap.min.js"
+    ]
+  },
+
+  "content_scripts": [{
+     "js": ["js/webpage.js"],
+     "matches": ["http://*/*", "https://*/*"],
+     "run_at":"document_end"
+   }],
+  "browser_action": {
+    "default_icon":"icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": "script-src 'self' https://en.wiktionary.org; object-src 'self'",
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "https://en.wiktionary.org/*"
+  ]
+}
