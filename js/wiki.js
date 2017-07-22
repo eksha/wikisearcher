@@ -29,7 +29,4 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 
-
-
-
 })
